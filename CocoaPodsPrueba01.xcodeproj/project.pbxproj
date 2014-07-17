@@ -21,6 +21,7 @@
 		AE25AD471977E8C10036E2F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25AD291977E8BB0036E2F1 /* UIKit.framework */; };
 		AE25AD4F1977E8C10036E2F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE25AD4D1977E8C10036E2F1 /* InfoPlist.strings */; };
 		AE25AD511977E8C10036E2F1 /* CocoaPodsPrueba01Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25AD501977E8C10036E2F1 /* CocoaPodsPrueba01Tests.m */; };
+		CA918127013A4FAA91F70B1B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B09595AC0014D8187D17ADB /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B09595AC0014D8187D17ADB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		224BC3454D2F4D4AB1E48C77 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		AE25AD221977E8BB0036E2F1 /* CocoaPodsPrueba01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPodsPrueba01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25AD251977E8BB0036E2F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE25AD271977E8BB0036E2F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +66,7 @@
 				AE25AD281977E8BB0036E2F1 /* CoreGraphics.framework in Frameworks */,
 				AE25AD2A1977E8BB0036E2F1 /* UIKit.framework in Frameworks */,
 				AE25AD261977E8BB0036E2F1 /* Foundation.framework in Frameworks */,
+				CA918127013A4FAA91F70B1B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 				AE25AD4A1977E8C10036E2F1 /* CocoaPodsPrueba01Tests */,
 				AE25AD241977E8BB0036E2F1 /* Frameworks */,
 				AE25AD231977E8BB0036E2F1 /* Products */,
+				224BC3454D2F4D4AB1E48C77 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +110,7 @@
 				AE25AD271977E8BB0036E2F1 /* CoreGraphics.framework */,
 				AE25AD291977E8BB0036E2F1 /* UIKit.framework */,
 				AE25AD441977E8C10036E2F1 /* XCTest.framework */,
+				1B09595AC0014D8187D17ADB /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE25AD541977E8C10036E2F1 /* Build configuration list for PBXNativeTarget "CocoaPodsPrueba01" */;
 			buildPhases = (
+				82720678058248D1ABE6AD75 /* Check Pods Manifest.lock */,
 				AE25AD1E1977E8BA0036E2F1 /* Sources */,
 				AE25AD1F1977E8BA0036E2F1 /* Frameworks */,
 				AE25AD201977E8BA0036E2F1 /* Resources */,
+				94A8898BB238494EAF687CB9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,6 +208,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = menus.es;
 				TargetAttributes = {
+					AE25AD211977E8BA0036E2F1 = {
+						DevelopmentTeam = 8TJVP56DTS;
+					};
 					AE25AD421977E8C10036E2F1 = {
 						TestTargetID = AE25AD211977E8BA0036E2F1;
 					};
@@ -244,6 +255,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82720678058248D1ABE6AD75 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94A8898BB238494EAF687CB9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE25AD1E1977E8BA0036E2F1 /* Sources */ = {
@@ -374,9 +418,11 @@
 		};
 		AE25AD551977E8C10036E2F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 224BC3454D2F4D4AB1E48C77 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPodsPrueba01/CocoaPodsPrueba01-Prefix.pch";
 				INFOPLIST_FILE = "CocoaPodsPrueba01/CocoaPodsPrueba01-Info.plist";
@@ -387,9 +433,11 @@
 		};
 		AE25AD561977E8C10036E2F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 224BC3454D2F4D4AB1E48C77 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPodsPrueba01/CocoaPodsPrueba01-Prefix.pch";
 				INFOPLIST_FILE = "CocoaPodsPrueba01/CocoaPodsPrueba01-Info.plist";
@@ -457,6 +505,7 @@
 				AE25AD561977E8C10036E2F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE25AD571977E8C10036E2F1 /* Build configuration list for PBXNativeTarget "CocoaPodsPrueba01Tests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +514,7 @@
 				AE25AD591977E8C10036E2F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

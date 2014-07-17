@@ -1,0 +1,8 @@
+platform :ios, '7.0'
+pod 'AFNetworking'
+pod 'Google-AdMob-Ads-SDK'
+pod 'MBProgressHUD'
+pod 'GoogleAnalytics-iOS-SDK'
+pod 'Google-Maps-iOS-SDK'
+pod 'Facebook-iOS-SDK'
+pod 'google-plus-ios-sdk'
