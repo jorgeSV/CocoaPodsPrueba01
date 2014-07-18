@@ -28,17 +28,23 @@ PODS:
   - google-plus-ios-sdk (1.7.0)
   - GoogleAnalytics-iOS-SDK (3.0.7)
   - MBProgressHUD (0.8)
+  - TRAutocompleteView (1.2):
+    - AFNetworking
   - TTTAttributedLabel (1.10.1)
 
 DEPENDENCIES:
-  - AFNetworking
   - Facebook-iOS-SDK
   - Google-AdMob-Ads-SDK
   - Google-Maps-iOS-SDK
   - google-plus-ios-sdk
   - GoogleAnalytics-iOS-SDK
   - MBProgressHUD
+  - TRAutocompleteView (from `https://github.com/jorgeSV/TRAutocompleteView`)
   - TTTAttributedLabel
+
+EXTERNAL SOURCES:
+  TRAutocompleteView:
+    :git: https://github.com/jorgeSV/TRAutocompleteView
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
@@ -49,6 +55,7 @@ SPEC CHECKSUMS:
   google-plus-ios-sdk: f613bd712196b435ecc098eed75afb3364bca177
   GoogleAnalytics-iOS-SDK: bb285d8eef15a682f1b82971becd0d22edd0e53b
   MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
+  TRAutocompleteView: 2a0bc6febbeb23c7b414085002e979b49f2dc6f9
   TTTAttributedLabel: 94bb04f1e005616002dd2cee0262a0082e533627
 
 COCOAPODS: 0.33.1

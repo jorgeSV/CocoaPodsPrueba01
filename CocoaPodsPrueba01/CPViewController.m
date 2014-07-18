@@ -8,15 +8,15 @@
 
 #import "CPViewController.h"
 
-#import <AFNetworking/AFNetworking.h>
-#import <Google-AdMob-Ads-SDK/GADBannerView.h>
-#import <Google-Maps-iOS-SDK/GoogleMaps/GoogleMaps.h>
-#import <GoogleAnalytics-iOS-SDK/GAI.h>
-#import <MBProgressHUD/MBProgressHUD.h>
-#import <google-plus-ios-sdk/GooglePlus.h>
-#import <Facebook-iOS-SDK/FacebookSDK/Facebook.h>
+#import <TRAutocompleteView/TRAutocompleteView.h>
+#import <TRAutocompleteView/TRGoogleMapsAutocompleteItemsSource.h>
+#import <TRAutocompleteView/TRGoogleMapsAutocompletionCellFactory.h>
 
+ 
 @interface CPViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property TRAutocompleteView *autocompleteView;
 
 @end
 
@@ -26,6 +26,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:_textField usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] initWithMinimumCharactersToTrigger:3 language:@"es" apiKey:@"AIzaSyBfEbzhgPJh7rwk1PYzhcw9I-69EmcZ3CI" types:@"(cities)"] cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc] initWithCellForegroundColor: [UIColor lightGrayColor] fontSize:14] presentingIn:self];
+    
+    _autocompleteView.didAutocompleteWith = ^(id<TRSuggestionItem> item)
+    {
+        NSLog(@"Autocompleted with description: %@", item.completionText);
+        NSLog(@"Autocompleted with id: %@", item.getID);
+    };
 }
 
 - (void)didReceiveMemoryWarning
